@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_realstores_index>
+        <reference name="content">
+            <block type="itfan_realstores/adminhtml_realstore" name="realstores"></block>
+        </reference>
+    </adminhtml_realstores_index>
+
+    <adminhtml_realstores_edit>
+        <reference name="content">
+            <block type="itfan_realstores/adminhtml_realstore_edit" name="realstores"></block>
+        </reference>
+    </adminhtml_realstores_edit>
+</layout>

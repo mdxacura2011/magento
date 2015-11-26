@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Itfan_Realstores>
+            <version>0.1.0</version>
+        </Itfan_Realstores>
+    </modules>
+    <global>
+        <blocks>
+            <itfan_realstores>
+                <class>Itfan_Realstores_Block</class>
+            </itfan_realstores>
+
+           <adminhtml>
+                <rewrite>
+                    <catalog_product_edit_tab_inventory>Itfan_Realstores_Block_Adminhtml_Catalog_Product_Edit_Tab_Inventory</catalog_product_edit_tab_inventory>
+                </rewrite>
+            </adminhtml>
+
+        </blocks>
+        <helpers>
+            <itfan_realstores><class>Itfan_Realstores_Helper</class></itfan_realstores>
+        </helpers>
+        <models>
+            <itfan_realstores>
+                <class>Itfan_Realstores_Model</class>
+                <resourceModel>realstores_resource</resourceModel>
+            </itfan_realstores>
+            <realstores_resource>
+                <class>Itfan_Realstores_Model_Resource</class>
+                <entities>
+                    <realstore>
+                        <table>realstores_table</table>
+                    </realstore>
+                </entities>
+            </realstores_resource>
+        </models>
+
+        <resources>
+
+            <itfan_realstores_setup>
+                <setup>
+                    <module>Itfan_Realstores</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </itfan_realstores_setup>
+
+            <itfan_realstores_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </itfan_realstores_write>
+
+            <itfan_realstores_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </itfan_realstores_read>
+
+        </resources>
+
+    </global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <itfan_realstores>
+                    <file>itfan/realstores.xml</file>
+                </itfan_realstores>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <itfan_realstores before="Mage_Adminhtml">Itfan_Realstores_Adminhtml</itfan_realstores>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

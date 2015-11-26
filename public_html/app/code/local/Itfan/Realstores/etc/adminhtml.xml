@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <itfan_realstores translate="title" module="itfan_realstores">
+            <title>Real Store</title>
+            <sort_order>55</sort_order>
+            <action>adminhtml/realstores</action>
+        </itfan_realstores>
+    </menu>
+</config>
