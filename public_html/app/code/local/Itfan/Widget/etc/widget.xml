@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<widgets>
+    <itfan_promotional_items type="itfan_widget/widget" module="itfan_widget">
+        <name>Promotional</name>
+        <desription>Category Listing Page</desription>
+        <parameters>
+            <title translate="label">
+                <label>Title text</label>
+                <visible>1</visible>
+                <type>text</type>
+                <value>Some random useless text</value>
+            </title>
+           <!-- <format translate="label">
+                <label>CLP</label>
+                <visible>1</visible>
+                <type>select</type>
+                <value>system</value>
+                <values>
+                    <default translate="label">
+                        <value>system</value>
+                        <label>System CLP</label>
+                    </default>
+                    <locale_format translate="label">
+                        <value>localized</value>
+                        <label>Localized CLP</label>
+                    </locale_format>
+                </values>
+            </format>-->
+            <template translate="label">
+                <label>Tamplate</label>
+                <visible>1</visible>
+                <type>select</type>
+                <value>itfan_widget/clp.phtml</value>
+                <values>
+                    <default translate="label">
+                        <value>itfan_widget/clp.phtml</value>
+                        <label>CLP Block Template</label>
+                    </default>
+                </values>
+            </template>
+        </parameters>
+    </itfan_promotional_items>
+</widgets>

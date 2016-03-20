@@ -1,0 +1,13 @@
+.my-widget {
+    float: left;
+    padding: 5px;
+    margin: 10px;
+}
+
+#my-div-widget {
+    margin-bottom: 120px;
+}
+
+div.clear{
+    clear: both;
+}

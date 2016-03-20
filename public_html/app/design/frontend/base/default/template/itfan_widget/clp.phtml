@@ -1,0 +1,8 @@
+<div id="my-div-widget">
+<?php foreach ($this->_productImageUrl as $pr): ?>
+    <a href="<?php echo $this->getUrl($pr->getRequestPath()); ?>" class="my-widget product-image">
+        <img src="<?php echo $pr->getImageUrl();?>" width="80" height="80">
+    </a>
+<?php endforeach;?>
+</div>
+<div class="clear"></div>

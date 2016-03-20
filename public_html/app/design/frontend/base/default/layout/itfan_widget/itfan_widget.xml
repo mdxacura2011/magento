@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <CATEGORY_11>
+        <reference name="content">
+            <block type="cms/block" name="clp" before="-">
+                <action method="setBlockId"><block_id>clp</block_id></action>
+            </block>
+        </reference>
+    </CATEGORY_11>
+   <CATEGORY_14>
+        <reference name="content">
+            <block type="cms/block" name="clp" before="-">
+                <action method="setBlockId"><block_id>clp</block_id></action>
+            </block>
+        </reference>
+    </CATEGORY_14>
+</layout>
