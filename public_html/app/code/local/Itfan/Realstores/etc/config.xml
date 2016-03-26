@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Itfan_Realstores>
-            <version>0.1.0</version>
+            <version>0.2.5</version>
         </Itfan_Realstores>
     </modules>
     <global>
@@ -32,6 +32,9 @@
                     <realstore>
                         <table>realstores_table</table>
                     </realstore>
+                    <summary>
+                        <table>summary_table</table>
+                    </summary>
                 </entities>
             </realstores_resource>
         </models>
@@ -41,6 +44,7 @@
             <itfan_realstores_setup>
                 <setup>
                     <module>Itfan_Realstores</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
                 </setup>
                 <connection>
                     <use>core_setup</use>
@@ -71,6 +75,34 @@
                 </itfan_realstores>
             </updates>
         </layout>
+
+        <events>
+            <adminhtml_block_html_before>
+                <observers>
+                    <onBlockHtmlBefore>
+                        <class>itfan_realstores/adminhtml_observer</class>
+                        <method>onBlockHtmlBefore</method>
+                    </onBlockHtmlBefore>
+                </observers>
+            </adminhtml_block_html_before>
+            <eav_collection_abstract_load_before>
+                <observers>
+                    <onEavLoadBefore>
+                        <!-- Add column to product list -->
+                    <class>itfan_realstores/adminhtml_observer</class>
+                    <method>onEavLoadBeforeSee</method>
+                </onEavLoadBefore>
+            </observers>
+            </eav_collection_abstract_load_before>
+            <catalog_product_prepare_save>
+                <observer>
+                    <catalogProductSaveBefore>
+                        <class>itfan_realstores/adminhtml_observer</class>
+                        <method>catalogProductSaveBefore</method>
+                    </catalogProductSaveBefore>
+                </observer>
+            </catalog_product_prepare_save>
+        </events>
     </adminhtml>
 
     <admin>
