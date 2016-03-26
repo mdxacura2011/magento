@@ -7,48 +7,11 @@
  */
 class Itfan_Realstores_Model_Adminhtml_Observer {
 
-    /*protected function _getAttributeOptions($attribute_code)
-    {
-        $attribute = Mage::getModel('catalog/product')->getAttribute('realstores', $attribute_code);
-        $options = array();
-        foreach( $attribute->getSource()->getAllOptions(true, true) as $option ) {
-            $options[$option['value']] = $option['label'];
-        }
-        return $options;
-    }*/
-
-    /*public function addFieldToFilter($attribute, $condition = null)
-    {
-        return $this->addAttributeToFilter($attribute, $condition);
-    }*/
 
     public function onBlockHtmlBefore(Varien_Event_Observer $observer) {
 
         $block = $observer->getBlock();
         if(!isset($block)) return;
-
-        /*$_products = Mage::getResourceModel('catalog/product_collection')
-            ->addAttributeToSelect(array('name'))
-            ->addAttributeToFilter('realstores', array('like' => 'UX%'))
-            ->load();*/
-
-
-        /*$collection = Mage::getModel('catalog/product')->getCollection();
-        $collection->addAttributeToSelect('name');
-        $collection->addFieldToFilter(array(
-            array('attribute'=>'realstores','gt'=>'100'),
-        ));
-        foreach ($collection as $product) {
-                    //var_dump($product);
-            echo '<pre>';
-            print_r($product->getData());
-                }
-        /*$options = array();
-        foreach ($collection as $item){
-            if($item->getId() != ''){
-                $options[$item->getId()] = $item->getName();
-            }
-        }*/
 
         switch ($block->getType()) {
             case 'adminhtml/catalog_product_grid':
@@ -76,6 +39,12 @@ class Itfan_Realstores_Model_Adminhtml_Observer {
             //$collection->addExpressionAttributeToSelect('realstores');
             $collection->addAttributeToSelect('realstores');
         }
+    }
+
+    public function catalogProductSaveBefore(Varien_Event_Observer $observer)
+    {   $product = $observer->getEvent()->getProduct();
+        //$product_id = Mage::registry('current_product')->getId();
+        //$product=Mage::getModel('catalog/product')->load($product_id);
     }
 
 }

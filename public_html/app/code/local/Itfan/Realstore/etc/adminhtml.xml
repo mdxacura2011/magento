@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <realstore translate="title" module="realstore">
+            <title>RealStore</title>
+            <sort_order>55</sort_order>
+            <action>adminhtml/realstore</action>
+        </realstore>
+    </menu>
+</config>

@@ -6,6 +6,7 @@
  * Time: 20:40
  */
 class Itfan_Realstores_Block_Adminhtml_Realstore_Grid extends Mage_Adminhtml_Block_Widget_Grid {
+
     protected function _construct()
     {
         $this->setId('realstoresGrid');

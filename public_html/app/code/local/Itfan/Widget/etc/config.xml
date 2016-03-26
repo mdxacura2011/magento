@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Itfan_Widget>
+            <version>0.1.0</version>
+        </Itfan_Widget>
+    </modules>
+    <global>
+        <blocks>
+            <itfan_widget>
+                <class>Itfan_Widget_Block</class>
+            </itfan_widget>
+        </blocks>
+        <helpers>
+            <itfan_widget>
+                <class>Itfan_Widget_Helper</class>
+            </itfan_widget>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <itfan_widget>
+                    <file>itfan_widget/itfan_widget.xml</file>
+                </itfan_widget>
+            </updates>
+        </layout>
+    </frontend>
+</config>

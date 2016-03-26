@@ -1,13 +1,14 @@
 <tr>
 	<td class="label"><label for="catalog_product_edit_tab_inventory"><?php echo Mage::helper('itfan_realstores')->__('Realstores') ?></label></td>
-	<td class="value"><select id="catalog_product_edit_tab_inventory" name="product[realstores]" class="select" size="5" multiple>
+	<td class="value"><select id="catalog_product_edit_tab_inventory" name="product[realstores]" class="select multiselect" size="5" multiple="multiple">
 			<?php $collection = Mage::getModel('itfan_realstores/realstore')->getCollection(); ?>
 			<?php foreach($collection as $namestore): ?>
-			<option value="<?php echo $namestore->getData('id'); ?>"><?php echo $namestore->getData('name_store'); ?></option>
+			<option value="<?php echo $namestore->getData('name_store'); ?>"><?php echo $namestore->getData('name_store'); ?></option>
 			<?php endforeach; ?>
 		</select>
 	</td>
 	<td class="value scope-label"><?php echo Mage::helper('adminhtml')->__('[GLOBAL]') ?></td>
 </tr>
 </table>
+
 

@@ -6,6 +6,7 @@
  * Time: 20:35
  */
 class Itfan_Realstores_Block_Adminhtml_Realstore extends Mage_Adminhtml_Block_Widget_Grid_Container {
+
     protected function _construct()
     {
         $this->_addButtonLabel = Mage::helper('itfan_realstores')->__('Add New Store'); //Кнопка для добавления. В маршрутизаторе дописывает new (admin/realstore/new)

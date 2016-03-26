@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <RealStore>
+            <version>0.1.0</version>
+        </RealStore>
+    </modules>
+    <global>
+
+        <blocks>
+            <realstore>
+                <class>Itfan_RealStore_Block</class>
+            </realstore>
+        </blocks>
+
+        <helpers>
+            <realstore>
+                <class>Itfan_RealStore_Helper</class>
+            </realstore>
+        </helpers>
+
+        <models>
+            <realstore>
+                <class>Itfan_RealStore_Model</class>
+                <resourceModel>realstore_resource</resourceModel>
+            </realstore>
+            <realstore_resource>
+                <class>Itfan_RealStore_Model_Resource</class>
+                <entities>
+                    <real>
+                        <table>Itfan</table>
+                    </real>
+                </entities>
+            </realstore_resource>
+        </models>
+
+        <resources>
+            <realstore_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </realstore_write>
+            <realstore_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </realstore_read>
+
+            <realstore_setup>
+                <setup>
+                    <module>Itfan_RealStore</module>
+                    <class>Itfan_RealStore_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </realstore_setup>
+
+        </resources>
+    </global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <realstore>
+                    <file>itfan/realstore.xml</file>
+                </realstore>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <realstore before="Mage_Adminhtml">Itfan_RealStore_Adminhtml</realstore>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+</config>

@@ -6,7 +6,9 @@
  * Time: 19:58
  */
 class Itfan_Realstores_Model_Realstore extends Mage_Core_Model_Abstract {
+
     protected $imagePath = 'itfan_realstores';
+
     protected function _construct() {
         $this->_init('itfan_realstores/realstore');
     }
@@ -91,4 +93,5 @@ class Itfan_Realstores_Model_Realstore extends Mage_Core_Model_Abstract {
         $this->setData('image', '');
         return $this;
     }
+
 }

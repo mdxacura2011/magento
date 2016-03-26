@@ -13,9 +13,9 @@ class Itfan_Widget_Block_Widget extends Mage_Core_Block_Template implements Mage
     {
         $category_id = Mage::registry('current_category')->getId();
 
-        $products = Mage::getModel('catalog/product')->getCollection()
-        ->addAttributeToSelect('image')
-        ->addCategoryFilter(Mage::getModel('catalog/category')->load($category_id));
+        $products = Mage::getModel('catalog/product')->getCollection();
+        $products->addAttributeToSelect('image');
+        $products->addCategoryFilter(Mage::getModel('catalog/category')->load($category_id));
         $products->getSelect()->limit(3);
          $products->load();
         foreach($products as $product) {
