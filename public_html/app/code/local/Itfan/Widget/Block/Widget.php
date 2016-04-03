@@ -11,17 +11,20 @@ class Itfan_Widget_Block_Widget extends Mage_Core_Block_Template implements Mage
 
     protected function _toHtml()
     {
-        $category_id = Mage::registry('current_category')->getId();
-
         $products = Mage::getModel('catalog/product')->getCollection();
-        $products->addAttributeToSelect('image');
-        $products->addCategoryFilter(Mage::getModel('catalog/category')->load($category_id));
-        $products->getSelect()->limit(3);
-         $products->load();
-        foreach($products as $product) {
-           $this->_productImageUrl[] = $product;
-        }
+        if (!isset($products)) return;
 
-        return parent::_toHtml();
+        if ($products instanceof Mage_Catalog_Model_Resource_Product_Collection) {
+            $category_id = Mage::registry('current_category')->getId();
+            $products->addAttributeToSelect('image');
+            $products->addCategoryFilter(Mage::getModel('catalog/category')->load($category_id));
+            $products->getSelect()->limit(3);
+            $products->load();
+            foreach ($products as $product) {
+                $this->_productImageUrl[] = $product;
+            }
+
+            return parent::_toHtml();
+        }
     }
 }
